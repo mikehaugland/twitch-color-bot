@@ -8,14 +8,14 @@ let light = 55;
 
 let connected = false;
 
-const colorMode = process.env.TWITCH_BOT_COLOR_MODE || "loop";
-
 if (!process.env.TWITCH_BOT_KEY || !process.env.TWITCH_BOT_USERNAME) {
   console.log(
     "TWITCH_BOT_KEY and TWITCH_BOT_USERNAME must be available as environment variables"
   );
   process.exit(1);
 }
+
+const colorMode = process.env.TWITCH_BOT_COLOR_MODE || "loop";
 
 const client = new tmi.Client({
   connection: {

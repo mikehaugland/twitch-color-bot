@@ -3,9 +3,10 @@
 Setup the following environment variables:
 
 - `TWITCH_BOT_KEY` (required)
+  - You can generate a key here: https://twitchapps.com/tmi/
 - `TWITCH_BOT_USERNAME` (required)
 - `TWITCH_BOT_COLOR_MODE`
-  - Choose between `random` and `loop`
+  - Currently supports `random` and `loop`
   - Random will select a random color with varying hue, saturation, and lightness.
   - Loop will increment the hue value through the spectrum and loop.
 - `TWITCH_BOT_INTERVAL`
