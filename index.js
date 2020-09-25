@@ -36,9 +36,9 @@ client.connect();
 
 function onConnected(addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
-  updateColor();
-
+  
   connected = true;
+  updateColor();
 }
 
 function onDisconnected(reason) {
