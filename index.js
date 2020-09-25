@@ -36,6 +36,7 @@ client.connect();
 
 function onConnected(addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
+  updateColor();
 
   connected = true;
 }
@@ -62,6 +63,7 @@ function incrementColorLoop() {
 
 function updateColor() {
   if (!connected) {
+    console.log('tried to update color while not connected.');
     return;
   }
 
@@ -81,7 +83,6 @@ function updateColor() {
 
 const intervalTime = process.env.TWITCH_BOT_INTERVAL * 1000 || 10000;
 
-updateColor();
 interval = setInterval(function () {
   updateColor();
 }, intervalTime);
