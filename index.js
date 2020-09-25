@@ -61,6 +61,10 @@ function incrementColorLoop() {
 }
 
 function updateColor() {
+  if (!connected) {
+    return;
+  }
+
   if (colorMode === "random") {
     generateRandomColor();
   } else {
@@ -77,8 +81,7 @@ function updateColor() {
 
 const intervalTime = process.env.TWITCH_BOT_INTERVAL * 1000 || 10000;
 
-interval = setInterval(function() {
-  if (connected) {
-    updateColor();
-  }
+updateColor();
+interval = setInterval(function () {
+  updateColor();
 }, intervalTime);
